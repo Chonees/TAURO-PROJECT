@@ -1,0 +1,15 @@
+# --- Núcleo para Excel -> JSON ---
+pandas
+openpyxl
+
+# --- Web Framework ---
+Flask==2.3.3
+Werkzeug==2.3.7
+
+# --- IA Analysis ---
+openai==0.28
+python-dotenv==1.0.0
+
+# Sugerido: actualiza herramientas de instalación si pip se queja
+# (no se instalan con -r, es solo por si ves errores)
+# pip --upgrade pip setuptools wheel

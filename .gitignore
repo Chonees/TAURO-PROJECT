@@ -1,0 +1,68 @@
+# TAURO Project - Archivos a ignorar por Git
+
+# Variables de entorno (contienen API keys) - CRÍTICO: NO SUBIR
+.env
+Tauro/.env
+*.env
+
+# Documentación interna (no subir al repositorio público)
+doc/
+
+# Archivos de Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Entorno virtual
+.venv/
+venv/
+ENV/
+env/
+
+# Archivos subidos por usuarios
+uploads/
+*.xlsx
+*.xlsm
+*.xls
+
+# Archivos de salida generados
+output/
+*.json
+
+# Logs
+*.log
+logs/
+
+# Archivos temporales
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
