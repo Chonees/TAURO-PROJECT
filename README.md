@@ -177,10 +177,17 @@ cellmap]  header]   timesheet] notes]    analyzer] chatbot]
 - **Intuitive**: Easy to use for inspectors
 - **Modern**: Smooth animations and effects
 - **Professional**: Appropriate design for industry
+- **Streamlined**: Focus on core functionality without file history distractions
 
 ---
 
 ## 🔄 **Recent Updates**
+
+### **🎯 STREAMLINED INTERFACE (October 2025):**
+- **Removed file history**: Eliminated "Recently Processed Files" section for cleaner interface
+- **Focused workflow**: Direct upload → process → analyze → chat workflow
+- **Reduced complexity**: Removed unnecessary file management features
+- **Better UX**: Cleaner, more focused user experience
 
 ### **🚀 COMPLETE OPERATIONAL NOTES INTEGRATION (October 2025):**
 - **New component**: `extract_operational_notes.py` for extracting operational data
@@ -274,9 +281,9 @@ cellmap]  header]   timesheet] notes]    analyzer] chatbot]
 
 ### **📁 Upload and Process:**
 1. Drag Excel file to the web interface
-2. Wait for automatic processing
-3. Use the chatbot to query the data
-4. Download generated analysis
+2. Wait for automatic processing (cellmap → header → events → notes)
+3. Use the specialized chatbot to query the data
+4. Get intelligent insights about maritime operations
 
 ---
 

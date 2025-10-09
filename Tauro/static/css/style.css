@@ -409,63 +409,6 @@ body {
     border-color: var(--accent-primary);
 }
 
-/* History Section */
-.history-section {
-    background: var(--bg-card);
-    border-radius: 12px;
-    padding: 2rem;
-    box-shadow: var(--shadow-md);
-    border: 1px solid var(--border-color);
-}
-
-.history-section h3 {
-    margin-bottom: 1.5rem;
-    color: var(--text-primary);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.files-list {
-    display: grid;
-    gap: 1rem;
-}
-
-.file-item {
-    background: var(--bg-secondary);
-    padding: 1rem;
-    border-radius: 8px;
-    border: 1px solid var(--border-color);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: var(--transition);
-}
-
-.file-item:hover {
-    background: var(--bg-hover);
-    transform: translateY(-1px);
-}
-
-.file-info h4 {
-    color: var(--text-primary);
-    margin-bottom: 0.25rem;
-}
-
-.file-info p {
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-}
-
-.file-actions {
-    display: flex;
-    gap: 0.5rem;
-}
-
-.btn-small {
-    padding: 0.5rem 1rem;
-    font-size: 0.8rem;
-}
 
 /* Footer */
 .footer {

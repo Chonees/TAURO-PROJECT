@@ -12,7 +12,6 @@ class TauroApp {
 
     init() {
         this.setupEventListeners();
-        this.loadFileHistory();
     }
 
     setupEventListeners() {
@@ -127,8 +126,6 @@ class TauroApp {
         document.getElementById('resultsSection').style.display = 'block';
         document.getElementById('resultsSection').classList.add('fade-in');
         
-        // Actualizar historial
-        this.loadFileHistory();
         
         // Scroll to results
         document.getElementById('resultsSection').scrollIntoView({ 
@@ -359,54 +356,6 @@ class TauroApp {
         event.target.classList.add('active');
     }
 
-    async loadFileHistory() {
-        try {
-            const response = await fetch('/files');
-            const files = await response.json();
-            
-            if (response.ok) {
-                this.displayFileHistory(files);
-            }
-        } catch (error) {
-            console.error('Error loading file history:', error);
-        }
-    }
-
-    displayFileHistory(files) {
-        const filesList = document.getElementById('filesList');
-        
-        if (files.length === 0) {
-            filesList.innerHTML = '<p class="text-muted">No hay archivos procesados aún.</p>';
-            return;
-        }
-        
-        let html = '';
-        files.forEach(file => {
-            const date = new Date(file.created * 1000).toLocaleString('es-ES');
-            html += `
-                <div class="file-item">
-                    <div class="file-info">
-                        <h4>${file.name}</h4>
-                        <p>Procesado: ${date}</p>
-                    </div>
-                    <div class="file-actions">
-                        <button class="btn btn-small btn-secondary" 
-                                onclick="app.loadFile('${file.name}', '${file.cellmap_file}', 'cellmap')">
-                            <i class="fas fa-table"></i> Cellmap
-                        </button>
-                        ${file.events_file ? `
-                            <button class="btn btn-small btn-secondary" 
-                                    onclick="app.loadFile('${file.name}', '${file.events_file}', 'events')">
-                                <i class="fas fa-clock"></i> Eventos
-                            </button>
-                        ` : ''}
-                    </div>
-                </div>
-            `;
-        });
-        
-        filesList.innerHTML = html;
-    }
 
     async loadFile(filename, dataFile, type) {
         this.currentFilename = filename;
