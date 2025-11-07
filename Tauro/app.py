@@ -191,33 +191,7 @@ def get_notes(filename):
         with open(filepath, 'r', encoding='utf-8') as f:
             data = json.load(f)
         
-        print(f"📝 Notas operacionales cargadas: {filename}")
         return jsonify(data)
-    except Exception as e:
-        return jsonify({'error': str(e)}), 500
-
-@app.route('/files')
-def list_files():
-    """Listar archivos procesados"""
-    try:
-        files = []
-        for file_path in OUTPUT_FOLDER.glob("*_cellmap.json"):
-            stem = file_path.stem.replace("_cellmap", "")
-            events_file = OUTPUT_FOLDER / f"{stem}_events.json"
-            header_file = OUTPUT_FOLDER / f"{stem}_header.json"
-            
-            files.append({
-                'name': stem,
-                'cellmap_file': file_path.name,
-                'events_file': events_file.name if events_file.exists() else None,
-                'header_file': header_file.name if header_file.exists() else None,
-                'created': file_path.stat().st_mtime
-            })
-        
-        # Ordenar por fecha de creación (más reciente primero)
-        files.sort(key=lambda x: x['created'], reverse=True)
-        
-        return jsonify(files)
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
@@ -225,7 +199,6 @@ def list_files():
 def analyze_with_ai(filename):
     """Analizar eventos con IA"""
     try:
-        # Buscar archivo de eventos
         events_file = OUTPUT_FOLDER / filename
         if not events_file.exists():
             return jsonify({'error': 'Archivo de eventos no encontrado'}), 404
