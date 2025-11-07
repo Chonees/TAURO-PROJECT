@@ -14,8 +14,8 @@
     --text-muted: #666666;
     
     /* Accent Colors */
-    --accent-primary: #00d4ff;
-    --accent-secondary: #0099cc;
+    --accent-primary: #0099cc86;
+    --accent-secondary: #0099cc86;
     --accent-success: #00ff88;
     --accent-warning: #ffaa00;
     --accent-error: #ff4444;
